@@ -3,5 +3,4 @@ function formatApi(api) {
 }
 
 //通过exports暴露方法
-// module.exports=formatApi
 exports.formatApi = formatApi
