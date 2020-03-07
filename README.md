@@ -35,3 +35,6 @@ node snippets
 - ~前两位不变，最后一位取最新
 - *全部取最新
 - 没有表示确定的某个版本
+
+## ejs
+- npm install ejs --save
