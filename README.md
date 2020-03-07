@@ -7,7 +7,8 @@ node snippets
 
 ## 运行js文件
 - node xxx.js
-
+## 调式模式运行js文件
+- node --inspect-brk xxx.js
 ## nodejs 热部署工具 supervisor
 - npm install -g supervisor
 - 使用supervisor命令替换node命令
