@@ -9,6 +9,8 @@ node snippets
 - node xxx.js
 ## 调式模式运行js文件
 - node --inspect-brk xxx.js
+- 在谷歌浏览器中打开地址：chrome://inspect/#devices
+
 ## nodejs 热部署工具 supervisor
 - npm install -g supervisor
 - 使用supervisor命令替换node命令
