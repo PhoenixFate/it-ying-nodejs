@@ -41,3 +41,7 @@ node snippets
 
 ## ejs
 - npm install ejs --save
+
+
+## mongo
+- npm install mongodb --save
