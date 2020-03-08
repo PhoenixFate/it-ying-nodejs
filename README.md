@@ -7,6 +7,7 @@ node snippets
 
 ## 运行js文件
 - node xxx.js
+
 ## 调式模式运行js文件
 - node --inspect-brk xxx.js
 - 在谷歌浏览器中打开地址：chrome://inspect/#devices
@@ -42,6 +43,15 @@ node snippets
 ## ejs
 - npm install ejs --save
 
-
 ## mongo
 - npm install mongodb --save
+
+## express
+- npm install express --save
+
+
+
+
+
+
+

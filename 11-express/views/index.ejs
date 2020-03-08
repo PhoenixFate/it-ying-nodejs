@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+<%- include("./public/header.ejs") %>
+
+<h3>this is index page</h3>
+<ul>
+    <%for(let i=0;i<news_list.length;i++){%>
+        <li><%=news_list[i]%></li>
+    <%}%>
+</ul>
+</body>
+</html>
