@@ -1,7 +1,15 @@
 const express=require("express")
 
+//设置cookie
+const cookieParser=require("cookie-parser")
+
 //实例化express
 var app=new express()
+
+//设置cookie中间件
+//加密的盐
+app.use(cookieParser('keySigned'))
+
 
 //express中使用ejs只需要安装ejs，不需要引入，因为express默认集成了ejsa
 //但需要配置ejs模板引擎
@@ -117,10 +125,51 @@ app.get("/index",(request,response)=>{
 
 
 
+
+
+
+app.get("/setCookie",function(req,res){
+    //httpOnly:true  通过程序（js脚本、applet等）无法获取cookie信息，防止XSS攻击
+    //domain:'.phoenix.com'  多个二级域名共享域名、 例如www.phoenix.com news.phoenix.com 默认不共享
+    //path:'/news' 设置只在某具体但子目录下面才能狗访问cookie
+    res.cookie("username","tom",{maxAge:60000,httpOnly:true})
+
+    res.cookie("password","123456",{expires:new Date(Date.now()+900000),httpOnly:true})
+
+    res.send("你好 已经成功设置cookie")
+})
+
+
+app.get("/getCookie",function(req,res){
+    console.log(req.cookies)
+    res.send("获取cookie:  "+req.cookies.username)
+})
+
+
+app.get("/setCookieSigned",function(req,res){
+    //保存的时候加密
+    //需要设置加密的key
+    // app.use(cookieParser('keySigned'))
+    res.cookie("nameSigned","tomcat",{maxAge:600000,signed:true,httpOnly:true})
+    res.send("设置加密的cookie 成功")
+})
+
+app.get("/getCookieSigned",function(req,res){
+    res.send("获取加密的cookie: "+req.signedCookies.nameSigned)
+})
+
+
+
 //上面的路由都没有匹配到，则返回404
 app.use(function(request,response){
     response.status(404).send("没有匹配到页面，返回404")
 })
+
+
+
+
+
+
 
 
 

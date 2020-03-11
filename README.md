@@ -49,9 +49,17 @@ node snippets
 ## express
 - npm install express --save
 
-
-
-
+## cookie
+1. 安装
+- npm install cookie-parser --save
+2. 引入
+- var cookieParser = require('cookie-parser')
+3. 设置中间件
+- app.use(cookieParser())
+4. 设置cookie
+- res.cookie("name","zhangsan",{maxAge:9000000,httpOnly:true})
+5. 获取cookie
+- req.cookies.name
 
 
 
