@@ -61,5 +61,20 @@ node snippets
 5. 获取cookie
 - req.cookies.name
 
+## session
+1. 安装
+- npm install express-session --save
+2. 引入
+- var session=require("express-session")
+3. 设置中间件
+```
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  cookie:{secure:true}
+}))
+```
+
 
 
