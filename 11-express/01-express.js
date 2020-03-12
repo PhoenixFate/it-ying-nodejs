@@ -189,10 +189,18 @@ app.get("/getSession",function(req,res){
 })
 
 
+app.get("/deleteSession",function(req,res){
+    req.session.cookie.maxAge=0
+    res.send("销毁session 成功")
+})
 
 
+app.get("/deleteSession2",function(req,res){
+    req.session.destroy(function(error){
 
-
+    })
+    res.send("销毁session2 成功")
+})
 
 
 
