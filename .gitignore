@@ -4,5 +4,9 @@ null
 out
 target
 03-package/node_modules
+
+07-get-post-ejs/node_modules
+08-router/node_modules
+
 10-mongo/node_modules
 11-express/node_modules
