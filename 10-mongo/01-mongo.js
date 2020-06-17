@@ -33,17 +33,18 @@ const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 
 // Connection URL
-const url = 'mongodb://edserver:edserver@114.67.89.253:19025';
+const url = 'mongodb://fengOwner:feng@114.67.89.253:40017/';
 
 // Database Name
-const dbName = 'edserver';
+const dbName = 'feng';
 
 // Use connect method to connect to the server
-MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, function (err, client) {
-  assert.equal(null, err);
+MongoClient.connect(url,{useNewUrlParser: true , useUnifiedTopology: true } , function (err, client) {
+  // assert.equal(null, err);
   console.log("Connected successfully to server");
 
   const db = client.db(dbName);
+  console.log(db)
   console.log(db)
 
   insertDocuments(db, function (result) {
