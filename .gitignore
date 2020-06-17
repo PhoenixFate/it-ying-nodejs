@@ -10,3 +10,4 @@ target
 
 10-mongo/node_modules
 11-express/node_modules
+.DS_STORE
